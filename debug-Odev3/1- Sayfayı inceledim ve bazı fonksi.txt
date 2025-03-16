@@ -1,0 +1,9 @@
+1- Sayfayı inceledim ve bazı fonksiyonları denedim. Bazı hatalar tespit ettim. Örneğin, birkaç ürün eklememize rağmen toplamın hep bir üründe kalması, ürünlerde stok durumunun yanlış gösterilmesi ve indirim hesaplamasının doğru olmaması gibi sorunlarla karşılaştım.
+
+2- DevTools'u açıp Source sekmesinden hata olabilecek noktalara breakpoint ekledim. Bunlar, stok kontrolü yaptığımız 23. satır, toplam hesaplama yaptığımız 73. satır ve indirimi hesapladığımız 81. satırdı.
+
+3- Laptop ürününden sepete 5 tane eklemeyi denedim. Breakpoint'te kod durduğunda değişkenleri inceledim ve stokta 5 tane olmasına rağmen "Yetersiz stok" hatası verdiğini gördüm. İlk hatanın, stok kontrolü yapılan koşulda olduğunu fark ettim. Koşulda eşitlik işareti gereksizdi ve bu yüzden stok yetersiz olarak algılanıyordu.
+
+4- İkinci hatayı, sepete birden fazla ürün eklediğimizde toplam fiyatın yanlış hesaplanmasından anladım. CalculateTotal metodundaki breakpoint'e geldiğimde, fiyatın miktarla çarpılmadığını fark ettim. Bunun sonucunda toplam fiyat yanlış hesaplanıyordu. Bu hatayı, fiyatı ürün miktarıyla çarparak düzelttim.
+
+5- Son olarak, indirim hesaplamasının yanlış yapıldığını gördüm. Breakpoint'te durduğumda, indirim yüzde 10 olmasına rağmen fiyatın yüzde 90 düştüğünü fark ettim. Bunun sebebinin indirim hesaplama satırındaki yanlış bir işlem olduğunu anladım ve gerekli düzeltmeyi yaptım.
